@@ -108,15 +108,16 @@ p {
   border-radius: 4px;
 }
 .modal-btn {
-  border: none;
-  background-color: transparent;
-  padding: 0;
-}
-.close {
   position: absolute;
   right: 8px;
   top: 8px;
 
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+}
+.close {
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -124,11 +125,12 @@ p {
 
   cursor: pointer;
 
-  transition: border-color var(--duration) var(--cubic);
+  transition: fill var(--duration) var(--cubic);
 }
 
-.close:hover {
-  border-color: var(--col-accent);
+.close:hover,
+.close:focus {
+  fill: var(--col-accent);
 }
 
 .backdrop .form {
@@ -147,29 +149,168 @@ p {
 }
 
 .backdrop .form-flex {
+  position: relative;
+
   display: flex;
   flex-direction: column;
 
   margin-bottom: 10px;
 }
+.form .label-name {
+  margin-bottom: 4px;
 
-.comments.form-flex {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+
+  letter-spacing: 0.01em;
+
+  color: var(--col-minor);
+}
+.form .input-label {
+  display: block;
+  padding: 0 42px;
+
+  width: 448px;
+  height: 40px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: none;
+
+  cursor: pointer;
+
+  transition: border-color var(--duration) var(--cubic);
+}
+.form .input-label:hover,
+.form .input-label:focus {
+  border-color: var(--col-accent);
+}
+.form .input-label:hover + .form-icon,
+.form .input-label:focus + .form-icon {
+  fill: var(--col-accent);
+}
+
+.form .form-icon {
+  position: absolute;
+  bottom: 11px;
+  left: 12px;
+
+  transition: fill var(--duration) var(--cubic);
+}
+.comments {
   margin-bottom: 20px;
 }
+
 .form .textarea {
+  display: block;
+  padding: 12px 16px;
+
+  width: 448px;
+  height: 120px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: none;
   resize: none;
 
-  margin-top: 4px;
+  cursor: pointer;
+
+  transition: border-color var(--duration) var(--cubic);
 }
-.form .input-mt {
-  margin-top: 4px;
+.form .textarea:hover,
+form .textarea:focus {
+  border-color: var(--col-accent);
 }
+.form .textarea::placeholder {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+
+  color: rgba(117, 117, 117, 0.5);
+}
+
 .form .agree {
+  display: flex;
+  align-items: center;
   margin-bottom: 30px;
 }
+.form .checkbox-icon {
+  display: inline-block;
+
+  margin-left: 13px;
+
+  width: 16px;
+  height: 15px;
+  background-color: var(--col-white);
+  border: 2px solid var(--col-main);
+  border-radius: 2px;
+
+  transition: var(--duration) var(--cubic);
+}
+
+.form .checkbox:checked + .checkbox-icon {
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  background-image: url(../images/nike.svg);
+  background-size: cover;
+  background-origin: border-box;
+  background-color: var(--col-accent);
+  border-color: var(--col-accent);
+}
+
+.form .checkbox:hover + .checkbox-icon,
+.form .checkbox:focus + .checkbox-icon {
+  border-color: var(--col-accent);
+}
+.checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+.checkbox-text {
+  margin-left: 7px;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+
+  letter-spacing: 0.03em;
+
+  color: var(--col-minor);
+}
+
 .form .form-btn {
   display: block;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 200px;
+  height: 50px;
+
+  letter-spacing: 0.06em;
+
+  color: var(--col-white);
+  background-color: var(--col-accent);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border-color: transparent;
+
+  transition: background-color var(--duration) var(--cubic);
+}
+
+.form .form-btn:hover,
+.form .form-btn:focus {
+  background-color: #188ce8;
 }
 
 /* --------------HEADER------------------- */
@@ -637,14 +778,74 @@ p {
   display: flex;
 }
 .form-container .email {
+  padding: 0;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 12px;
   margin-right: 12px;
 
   width: 358px;
   height: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  outline: none;
+
+  background-color: inherit;
+  color: var(--col-white);
+
+  transition: border-color var(--duration) var(--cubic);
+}
+.form-container .email::placeholder {
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+
+  letter-spacing: 0.03em;
+
+  color: rgba(255, 255, 255, 0.6);
+}
+.form-container .email:hover,
+.form-container .email:focus {
+  border-color: rgba(255, 255, 255, 0.6);
+}
+.container-send {
+  position: relative;
+}
+.icon-send {
+  position: absolute;
+  right: 28px;
+  bottom: 13px;
+  fill: var(--col-white);
 }
 .form-container .form-btn {
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 28px;
   width: 200px;
   height: 50px;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+  text-align: left;
+
+  color: var(--col-white);
+  background-color: var(--col-accent);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border-color: transparent;
+
+  transition: background-color var(--duration) var(--cubic);
+}
+.form-container .form-btn:hover,
+.form-container .form-btn:focus {
+  background-color: #188ce8;
 }
 
 /* --------------------PORTFOLIO------------------ */
