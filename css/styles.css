@@ -171,7 +171,8 @@ p {
 }
 .form .input-label {
   display: block;
-  padding: 0 42px;
+  padding-left: 42px;
+  padding-right: 12px;
 
   width: 448px;
   height: 40px;
@@ -183,13 +184,14 @@ p {
 
   transition: border-color var(--duration) var(--cubic);
 }
-.form .input-label:hover,
 .form .input-label:focus {
   border-color: var(--col-accent);
 }
-.form .input-label:hover + .form-icon,
 .form .input-label:focus + .form-icon {
   fill: var(--col-accent);
+}
+.form .form-icon {
+  cursor: pointer;
 }
 
 .form .form-icon {
@@ -209,6 +211,8 @@ p {
 
   width: 448px;
   height: 120px;
+  font-size: 12px;
+  line-height: 1.17;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   outline: none;
@@ -218,7 +222,6 @@ p {
 
   transition: border-color var(--duration) var(--cubic);
 }
-.form .textarea:hover,
 form .textarea:focus {
   border-color: var(--col-accent);
 }
@@ -261,10 +264,11 @@ form .textarea:focus {
   border-color: var(--col-accent);
 }
 
-.form .checkbox:hover + .checkbox-icon,
-.form .checkbox:focus + .checkbox-icon {
+.form .checkbox:hover + .checkbox-icon {
   border-color: var(--col-accent);
+  cursor: pointer;
 }
+
 .checkbox {
   position: absolute;
   width: 1px;
@@ -289,6 +293,13 @@ form .textarea:focus {
   color: var(--col-minor);
 }
 
+.form .checkbox:hover ~ .checkbox-text {
+  cursor: pointer;
+}
+.agree-link {
+  color: var(--col-accent);
+}
+
 .form .form-btn {
   display: block;
   margin-left: auto;
@@ -304,6 +315,7 @@ form .textarea:focus {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   border-color: transparent;
+  cursor: pointer;
 
   transition: background-color var(--duration) var(--cubic);
 }
@@ -765,6 +777,7 @@ form .textarea:focus {
   height: 86px;
 }
 .form-container .form-title {
+  display: block;
   margin-bottom: 20px;
 
   font-size: 14px;
@@ -790,6 +803,7 @@ form .textarea:focus {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
   outline: none;
+  cursor: pointer;
 
   background-color: inherit;
   color: var(--col-white);
@@ -807,9 +821,8 @@ form .textarea:focus {
 
   color: rgba(255, 255, 255, 0.6);
 }
-.form-container .email:hover,
 .form-container .email:focus {
-  border-color: rgba(255, 255, 255, 0.6);
+  border-color: var(--col-accent);
 }
 .container-send {
   position: relative;
@@ -840,12 +853,16 @@ form .textarea:focus {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   border-color: transparent;
+  cursor: pointer;
 
   transition: background-color var(--duration) var(--cubic);
 }
 .form-container .form-btn:hover,
 .form-container .form-btn:focus {
   background-color: #188ce8;
+}
+.icon-send:hover {
+  cursor: pointer;
 }
 
 /* --------------------PORTFOLIO------------------ */
