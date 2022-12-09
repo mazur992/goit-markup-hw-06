@@ -30,6 +30,7 @@ body {
   font-family: "Roboto", sans-serif;
   color: var(--col-main);
   background-color: var(--col-white);
+  min-width: 1200px;
 }
 .list {
   padding: 0;
